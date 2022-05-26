@@ -1,12 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
-import FindIp from './Components/FindIp';
 
+import FindIp from './Components/FindIp';
+import './body.css'
 function App() {
   return (
-    <div className="App">
      <FindIp/>
-    </div>
   );
 }
 

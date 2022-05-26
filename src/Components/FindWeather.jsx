@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Main from './Main';
 
 export default function FindWeather({ information }) {
     const [weather, setWeather] = useState();
@@ -14,7 +15,7 @@ export default function FindWeather({ information }) {
                 .then(function (response) {
                     // handle success
                     console.log(response.data.weather[0].main);
-                    setWeather(response.data);
+                    setWeather(response.data.weather[0]);
                 })
                 .catch(function (error) {
                     // handle error
@@ -28,6 +29,7 @@ export default function FindWeather({ information }) {
 
 
     return (
-        <div>{weather?.weather[0]?.main}</div>
+        // <div>{weather?.weather[0]?.main}</div>
+        <Main information={information} weather={weather}/>
     )
 }
